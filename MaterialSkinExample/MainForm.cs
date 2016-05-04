@@ -20,7 +20,7 @@ namespace MaterialSkinExample
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
 			materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-			materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            SetSkin();
 
 			// Add dummy data to the listview
 	        seedListView();
@@ -54,22 +54,46 @@ namespace MaterialSkinExample
 	    private int colorSchemeIndex;
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-	        colorSchemeIndex++;
-	        if (colorSchemeIndex > 2) colorSchemeIndex = 0;
+            SetSkin();
+        }
 
-			//These are just example color schemes
-	        switch (colorSchemeIndex)
-	        {
-				case 0:
-					materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-			        break;
-				case 1:
-					materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
-			        break;
-				case 2:
-					materialSkinManager.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Red100, TextShade.WHITE);
-					break;
-	        }
+        private void SetSkin()
+        {
+            if (colorSchemeIndex > 2) colorSchemeIndex = 0;
+
+            //These are just example color schemes
+            switch (colorSchemeIndex)
+            {
+                case 0:
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.LightBlue900, Primary.LightBlue500, Accent.LightBlue400, TextShade.WHITE);
+                    break;
+                case 1:
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow700, Primary.Yellow900, Primary.Yellow100, Accent.Green700, TextShade.WHITE);
+                    break;
+                case 2:
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Yellow700, TextShade.WHITE);
+                    break;
+            }
+
+            colorSchemeIndex++;
+        }
+
+        private void btnMessageBase_Click(object sender, EventArgs e)
+        {
+            lbResult.Text = string.Empty;
+            MsgBox.Show("this is a base message box");
+        }
+
+        private void btnYesOrNoMessage_Click(object sender, EventArgs e)
+        {
+            if (MsgBox.Show("this is a  'yes or no' message box", MessageButtonSet.YesNo) == DialogResult.Yes)
+            {
+                lbResult.Text = "you clicked 'yes' button.";
+            }
+            else
+            {
+                lbResult.Text = "you clicked 'no' button.";
+            }
         }
     }
 }

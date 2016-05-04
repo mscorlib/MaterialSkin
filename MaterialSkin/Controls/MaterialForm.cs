@@ -78,18 +78,18 @@ namespace MaterialSkin.Controls
             {HTBOTTOMRIGHT, WMSZ_BOTTOMRIGHT}
         };
 
-        private const int STATUS_BAR_BUTTON_WIDTH = STATUS_BAR_HEIGHT;
-        private const int STATUS_BAR_HEIGHT = 24;
-        private const int ACTION_BAR_HEIGHT = 40;
+        protected const int STATUS_BAR_BUTTON_WIDTH = STATUS_BAR_HEIGHT;
+        protected const int STATUS_BAR_HEIGHT = 28;
+        protected const int ACTION_BAR_HEIGHT = 40;
 
-        private const uint TPM_LEFTALIGN = 0x0000;
-        private const uint TPM_RETURNCMD = 0x0100;
+        protected const uint TPM_LEFTALIGN = 0x0000;
+        protected const uint TPM_RETURNCMD = 0x0100;
 
-        private const int WM_SYSCOMMAND = 0x0112;
-        private const int WS_MINIMIZEBOX = 0x20000;
-        private const int WS_SYSMENU = 0x00080000;
+        protected const int WM_SYSCOMMAND = 0x0112;
+        protected const int WS_MINIMIZEBOX = 0x20000;
+        protected const int WS_SYSMENU = 0x00080000;
 
-        private const int MONITOR_DEFAULTTONEAREST = 2;
+        protected const int MONITOR_DEFAULTTONEAREST = 2;
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto, Pack = 4)]
         public class MONITORINFOEX
@@ -482,13 +482,13 @@ namespace MaterialSkin.Controls
 
             g.Clear(SkinManager.GetApplicationBackgroundColor());
             g.FillRectangle(SkinManager.ColorScheme.DarkPrimaryBrush, statusBarBounds);
-            g.FillRectangle(SkinManager.ColorScheme.PrimaryBrush, actionBarBounds);
+            //g.FillRectangle(SkinManager.ColorScheme.PrimaryBrush, actionBarBounds);
 
             //Draw border
             using (var borderPen = new Pen(SkinManager.GetDividersColor(), 1))
             {
-                g.DrawLine(borderPen, new Point(0, actionBarBounds.Bottom), new Point(0, Height - 2));
-                g.DrawLine(borderPen, new Point(Width - 1, actionBarBounds.Bottom), new Point(Width - 1, Height - 2));
+                g.DrawLine(borderPen, new Point(0, actionBarBounds.Top), new Point(0, Height - 2));
+                g.DrawLine(borderPen, new Point(Width - 1, actionBarBounds.Top), new Point(Width - 1, Height - 2));
                 g.DrawLine(borderPen, new Point(0, Height - 1), new Point(Width - 1, Height - 1));
             }
 
@@ -567,7 +567,7 @@ namespace MaterialSkin.Controls
             }
 
             //Form title
-            g.DrawString(Text, SkinManager.ROBOTO_MEDIUM_12, SkinManager.ColorScheme.TextBrush, new Rectangle(SkinManager.FORM_PADDING, STATUS_BAR_HEIGHT, Width, ACTION_BAR_HEIGHT), new StringFormat { LineAlignment = StringAlignment.Center });
+            g.DrawString(Text, SkinManager.ROBOTO_MEDIUM_11, SkinManager.ColorScheme.TextBrush, 7.33f, 5.33f);
         }
     }
 
