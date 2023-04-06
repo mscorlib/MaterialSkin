@@ -44,7 +44,7 @@
             this.btnOk.Primary = true;
             this.btnOk.Size = new System.Drawing.Size(75, 27);
             this.btnOk.TabIndex = 1;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = "确定";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Visible = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -58,7 +58,7 @@
             this.btnYes.Primary = true;
             this.btnYes.Size = new System.Drawing.Size(75, 27);
             this.btnYes.TabIndex = 2;
-            this.btnYes.Text = "YES";
+            this.btnYes.Text = "是";
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Visible = false;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
@@ -72,7 +72,7 @@
             this.btnCancel.Primary = true;
             this.btnCancel.Size = new System.Drawing.Size(75, 27);
             this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -86,7 +86,7 @@
             this.btnNo.Primary = true;
             this.btnNo.Size = new System.Drawing.Size(75, 27);
             this.btnNo.TabIndex = 4;
-            this.btnNo.Text = "No";
+            this.btnNo.Text = "否";
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Visible = false;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);

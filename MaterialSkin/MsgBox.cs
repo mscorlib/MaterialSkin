@@ -10,7 +10,7 @@ namespace MaterialSkin
 {
     public class MsgBox
     {
-        private const string DefaultCaption = "Info:";
+        private const string DefaultCaption = "提示:";
 
         public static DialogResult Show(string message)
         {
